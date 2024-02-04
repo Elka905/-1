@@ -1,0 +1,19 @@
+package me;
+import java.time.LocalDate;
+import java.util.Scanner;
+public class Calendar {
+	public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Введите номер месяца: ");
+        int month = scanner.nextInt();
+        int days = getDaysInMonth(month);
+
+        System.out.println("Количество дней в указанном месяце: " + days);
+    }
+    public static int getDaysInMonth(int month) {
+        LocalDate date = LocalDate.now()
+                .withMonth(month)
+                .withDayOfMonth(1);
+        return date.lengthOfMonth();
+    }
+}
